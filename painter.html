@@ -43,5 +43,31 @@ function checkPainter(){
     }
 }
 </script>
+<div class="container">
+    <img src="Macadamia_integrifolia014_OlgaB.jpg" height="100" width="100" onclick="selectImage()" id="getimage">
+</div>
+<script>
+    var useImage = 1
+    function selectImage(){
+        out = document.getElementById("getimage")
+        switch(useImage){
+            case 1: 
+            out.src = "Macadamia_integrifolia014_OlgaB.jpg"
+            useImage += 1
+            break
+            case 2:
+                out.src = "Paeonia.png"
+                useImage += 1
+                break
+            case 3:
+                    out.src = "Restio.jpg"
+                    useImage+= 1
+                    break
+        }
+        if(useImage ==4){
+            useImage = 1
+        }
+    }
+</script>
 </body>
 </html> 
