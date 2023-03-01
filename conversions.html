@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conversions</title>
+    </head>
+ 
+ 
+<body>
+
+<h2>Bhargav Krishna Moparthy shows currency conversions</h2>
+
+<form>
+    <label for="form1_base">Enter base amount</label>
+    <input type ="number" id="form1_base" name="form1_base" value=50> <br>
+
+    <label for="form1_conversion">Enter the conversion rate</label>
+    <input type ="number" id="form1_conversion" name="form1_conversion" value="35"> <br>
+
+    <input type="button" onclick="convert()" value="show conversions">
+</form>
+
+
+<p id="result">output will be displayed </p>
+<script>
+    function convert(){
+        console.log("Getting form values")
+        base = document.getElementById("form1_base").value
+        conversion = document.getElementById("form1_conversion").value
+        conversion = base*conversion
+        var toshow = ""
+        toshow += base + " is " + Math.round(conversion*100)/100+"; "
+        for (var i=2; i<=5; i++){
+            base *=2
+            conversion *=2
+            toshow += base+ " is " + Math.round(conversion*100)/100 + "; "
+        }
+        out = document.getElementById("result")
+        out.innerHTML = "conversions are: " + toshow
+            }
+</script>
